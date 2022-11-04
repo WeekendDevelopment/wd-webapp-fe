@@ -56,9 +56,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <form className='login'>
-          <input className='textBox' type="text" placeholder='Enter your Email' onChange={this.handleChange} />
-          <input className='textBox' type="password" placeholder='Enter your Password' onChange={this.handleChange} />
-          <button className='button' type='submit' onClick={this.handleSubmit} onSubmit={this.handleSubmit}>Login</button>
+          <input data-ref="loginUsername.container" className='textBox' type="text" placeholder='Enter your Email' onChange={this.handleChange} />
+          <input data-ref="loginPassword.container" className='textBox' type="password" placeholder='Enter your Password' onChange={this.handleChange} />
+          <button data-ref="loginButton" className='button' type='submit' onClick={this.handleSubmit} onSubmit={this.handleSubmit}>Login</button>
         </form>
       </div>
     );
