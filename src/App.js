@@ -31,7 +31,8 @@ class App extends React.Component {
   }
 
   login() {
-    axios.post('/api/login', {
+    const BASE_API_URL = "https://e-paratext-367610.el.r.appspot.com"
+    axios.post(BASE_API_URL + '/login', {
       username: this.state.username,
       password: this.state.password
     }).then((response) => {
