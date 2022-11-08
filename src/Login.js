@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import bcrypt from "bcrypt"
 
 class Login extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Login extends React.Component {
     axios
       .post(BASE_API_URL + "/login", {
         username: this.state.username,
-        password: this.state.password,
+        password: bcrypt.hashSync(this.state.password),
       })
       .then(
         (response) => {
