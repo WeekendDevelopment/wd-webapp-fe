@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 class Signup extends React.Component {
   constructor(props) {
