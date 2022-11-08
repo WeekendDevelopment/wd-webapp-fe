@@ -1,15 +1,38 @@
 .App {
   text-align: center;
+  position: absolute;
+  width: 500px;
+  height: 330px;
+  top: 200px;
+  left: 500px;
+  overflow: hidden;
+  border-width: 5px;
+  border-style: solid;
+}
+
+#navTable {
+  width: 100%;
+}
+
+.navbar-elements {
+  width: 50%;
+  height: 30px;
+}
+
+.redirect {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white;
+}
+
+.redirect:hover, .navbar-elements:hover {
+  background-color: royalblue;
 }
 
 .login {
-  width: 500px;
-  height: 300px;
-  position: absolute;
-  top: 35%;
-  left: 33%;
-  border-width: 5px;
-  border-style: solid;
+  width: 490px;
+  height: 290px;
 }
 
 .textBox, .button {
