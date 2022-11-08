@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import bcrypt from "bcryptjs"
 
 class Signup extends React.Component {
   constructor(props) {
@@ -57,7 +56,7 @@ class Signup extends React.Component {
     axios
       .post(BASE_API_URL + "/signup", {
         userId: this.state.userId,
-        passwordHash: bcrypt.hashSync(this.state.passwordHash),
+        passwordHash: this.state.passwordHash,
         email: this.state.email
       })
       .then(
