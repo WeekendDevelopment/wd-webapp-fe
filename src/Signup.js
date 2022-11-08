@@ -35,12 +35,6 @@ class Signup extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(
-      "Form was submitted: " +
-        this.state.username +
-        " and " +
-        this.state.password
-    );
     this.signup();
     event.preventDefault();
   }
@@ -73,7 +67,6 @@ class Signup extends React.Component {
           });
         },
         (err) => {
-          console.log(err);
           if (err.response == null) {
             this.setState({
               dataLoaded: true,
@@ -93,7 +86,6 @@ class Signup extends React.Component {
         }
       )
       .catch((err) => {
-        console.log(err);
         this.setState({
           dataLoaded: true,
           data: "Failed to connect",
@@ -102,8 +94,6 @@ class Signup extends React.Component {
   }
 
   flagDirty(event) {
-    console.log("hit")
-    console.log(this.state.confirmPasswordDirty)
     if (event.target.value === "") {
       this.setState({
         confirmPasswordDirty: false,
@@ -117,7 +107,7 @@ class Signup extends React.Component {
 
   render() {
     if (this.state.dataLoaded) {
-      return <p>{this.state.data}</p>;
+      this.props.handleDataLoad(this.state.data);
     }
     return (
       <div className="login-container">
@@ -160,6 +150,11 @@ class Signup extends React.Component {
             type="submit"
             onClick={this.handleSubmit}
             onSubmit={this.handleSubmit}
+            disabled={!this.state.passwordMatch}
+            style={{
+                backgroundColor: this.state.passwordMatch ? 'royalblue' : 'grey',
+                cursor: this.state.passwordMatch ? 'pointer' : 'not-allowed'
+            }}
           >
             Signup
           </button>

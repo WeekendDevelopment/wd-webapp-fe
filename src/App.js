@@ -8,10 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      page: "login"
+      page: "login",
+      dataLoaded: false,
+      data: ''
     }
 
     this.updateData = this.updateData.bind(this);
+    this.handleDataLoad = this.handleDataLoad.bind(this);
   }
 
   updateData(event) {
@@ -22,7 +25,17 @@ class App extends React.Component {
     }
   }
 
+  handleDataLoad(dataObj) {
+    this.setState({
+      dataLoaded: true,
+      data: dataObj
+    });
+  }
+
   render() {
+    if(this.state.dataLoaded) {
+      return (<p>{this.state.data}</p>);
+    }
     if(this.state.page === "login") {
       return (
         <div className='App' style={{
@@ -36,7 +49,7 @@ class App extends React.Component {
             </tr>
             </tbody>
           </table>
-          <Login />
+          <Login handleDataLoad = {this.handleDataLoad.bind(this)} />
         </div>
       );
     } else {
@@ -52,7 +65,7 @@ class App extends React.Component {
             </tr>
             </tbody>
           </table>
-          <Signup />
+          <Signup handleDataLoad = {this.handleDataLoad.bind(this)} />
         </div>
       );
     }

@@ -28,12 +28,6 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(
-      "Form was submitted: " +
-        this.state.username +
-        " and " +
-        this.state.password
-    );
     this.login();
     event.preventDefault();
   }
@@ -53,7 +47,6 @@ class Login extends React.Component {
           });
         },
         (err) => {
-          console.log(err);
           if(err.response == null) {
             this.setState({
                 dataLoaded: true,
@@ -74,7 +67,6 @@ class Login extends React.Component {
         }
       )
       .catch((err) => {
-        console.log(err);
         this.setState({
           dataLoaded: true,
           data: "Failed to connect",
@@ -84,7 +76,7 @@ class Login extends React.Component {
 
   render() {
     if (this.state.dataLoaded) {
-      return <p>{this.state.data}</p>;
+      this.props.handleDataLoad(this.state.data);
     }
     return (
       <div className="login-container">
