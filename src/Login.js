@@ -83,6 +83,7 @@ class Login extends React.Component {
         <form className="login">
           <input
             data-ref="loginUsername.container"
+            id="loginUsername.container"
             className="textBox"
             type="text"
             placeholder="Enter your Email"
@@ -90,6 +91,7 @@ class Login extends React.Component {
           />
           <input
             data-ref="loginPassword.container"
+            id="loginPassword.container"
             className="textBox"
             type="password"
             placeholder="Enter your Password"
@@ -97,6 +99,7 @@ class Login extends React.Component {
           />
           <button
             data-ref="loginButton"
+            id="loginButton"
             className="button"
             type="submit"
             onClick={this.handleSubmit}

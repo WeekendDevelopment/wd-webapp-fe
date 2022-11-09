@@ -113,21 +113,24 @@ class Signup extends React.Component {
       <div className="login-container">
         <form className="login">
           <input
-            data-ref="loginUsername.container"
+            data-ref="signupUsername.container"
+            id="signupUsername.container"
             className="textBox"
             type="text"
             placeholder="Enter your username"
             onChange={this.handleChange}
           />
           <input
-            data-ref="loginEmail.container"
+            data-ref="signupEmail.container"
+            id="signupEmail.container"
             className="textBox"
             type="email"
             placeholder="Enter your Email"
             onChange={this.handleChange}
           />
           <input
-            data-ref="loginPassword.container"
+            data-ref="signupPassword.container"
+            id="signupPassword.container"
             className="textBox"
             type="password"
             placeholder="Enter your Password"
@@ -135,6 +138,7 @@ class Signup extends React.Component {
           />
           <input
             data-ref="confirmPassword.container"
+            id="confirmPassword.container"
             className="textBox"
             type="password"
             placeholder="Confirm your Password"
@@ -146,6 +150,7 @@ class Signup extends React.Component {
           />
           <button
             data-ref="signupButton"
+            id="signupButton"
             className="button"
             type="submit"
             onClick={this.handleSubmit}
