@@ -87,7 +87,7 @@ class Login extends React.Component {
             id="loginUsername.container"
             className="textBox"
             type="text"
-            placeholder="Enter your Email"
+            placeholder="Enter your Username"
             onChange={this.handleChange}
           />
           <input
