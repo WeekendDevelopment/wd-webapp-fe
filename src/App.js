@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import Login from "./Login.js";
 import Signup from "./Signup.js";
+import Profile from "./Profile.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -84,7 +85,8 @@ class App extends React.Component {
           <Login handleDataLoad={this.handleDataLoad.bind(this)} />
         </div>
       );
-    } else {
+    } 
+    else if (this.state.page === "signup") {
       return (
         <div
           className="App"
@@ -121,6 +123,18 @@ class App extends React.Component {
           <Signup handleDataLoad={this.handleDataLoad.bind(this)} />
         </div>
       );
+    }
+    else if (this.state.page === "profile") {
+      return (
+        <div
+          className="App"
+          style={{
+            height: "480px",
+          }}
+        >
+        <Profile handleDataLoad={this.handleDataLoad.bind(this)} />  
+        </div>  
+      );    
     }
   }
 }
