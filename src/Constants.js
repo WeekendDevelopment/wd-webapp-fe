@@ -1,6 +1,6 @@
 class Constants {
 
-    static BASE_API_URL = "http://localhost:8080";
+    static BASE_API_URL = "https://e-paratext-367610.el.r.appspot.com";
 
 }
 
