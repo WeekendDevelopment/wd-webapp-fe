@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Constants from "./Constants";
+import Encryption from "./Encryption";
 
 class Login extends React.Component {
   constructor(props) {
@@ -32,12 +34,11 @@ class Login extends React.Component {
     event.preventDefault();
   }
 
-  login() {
-    const BASE_API_URL = "https://e-paratext-367610.el.r.appspot.com";
+  async login() {
     axios
-      .post(BASE_API_URL + "/login", {
+      .post(Constants.BASE_API_URL + "/login", {
         username: this.state.username,
-        password: this.state.password,
+        password: await Encryption.encryptPassword(this.state.password),
       })
       .then(
         (response) => {

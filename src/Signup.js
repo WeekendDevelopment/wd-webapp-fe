@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Constants from "./Constants";
+import Encryption from "./Encryption";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -51,12 +53,11 @@ class Signup extends React.Component {
     }
   }
 
-  signup() {
-    const BASE_API_URL = "https://e-paratext-367610.el.r.appspot.com";
+  async signup() {
     axios
-      .post(BASE_API_URL + "/signup", {
+      .post(Constants.BASE_API_URL + "/signup", {
         userId: this.state.userId,
-        passwordHash: this.state.passwordHash,
+        passwordHash: await Encryption.encryptPassword(this.state.passwordHash),
         email: this.state.email
       })
       .then(
