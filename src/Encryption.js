@@ -1,5 +1,5 @@
 import axios from "axios";
-import { JSEncrypt } from 'jsencrypt'
+import { JSEncrypt } from "jsencrypt";
 import Constants from "./Constants";
 
 class Encryption {

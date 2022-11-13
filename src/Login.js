@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom"
+import { Navigate } from "react-router-dom";
 import Constants from "./Constants";
 import Encryption from "./Encryption";
 import LoginNavBar from "./LoginNavBar";
@@ -77,9 +77,9 @@ class Login extends React.Component {
   }
 
   render() {
-    if(this.state.dataLoaded) {
+    if (this.state.dataLoaded) {
       this.props.handleDataLoad(this.state.data);
-      return (<Navigate push to="/home" />);
+      return <Navigate push to="/home" />;
     }
     return (
       <div
