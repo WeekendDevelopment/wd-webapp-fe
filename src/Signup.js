@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Constants from "./Constants";
 import Encryption from "./Encryption";
+import LoginNavBar from "./LoginNavBar";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -58,7 +59,7 @@ class Signup extends React.Component {
       .post(Constants.BASE_API_URL + "/signup", {
         userId: this.state.userId,
         passwordHash: await Encryption.encryptPassword(this.state.passwordHash),
-        email: this.state.email
+        email: this.state.email,
       })
       .then(
         (response) => {
@@ -111,60 +112,74 @@ class Signup extends React.Component {
       this.props.handleDataLoad(this.state.data);
     }
     return (
-      <div className="login-container">
-        <form className="login">
-          <input
-            data-ref="signupUsername.container"
-            id="signupUsername.container"
-            className="textBox"
-            type="text"
-            placeholder="Enter your username"
-            onChange={this.handleChange}
-          />
-          <input
-            data-ref="signupEmail.container"
-            id="signupEmail.container"
-            className="textBox"
-            type="email"
-            placeholder="Enter your Email"
-            onChange={this.handleChange}
-          />
-          <input
-            data-ref="signupPassword.container"
-            id="signupPassword.container"
-            className="textBox"
-            type="password"
-            placeholder="Enter your Password"
-            onChange={this.handleChange}
-          />
-          <input
-            data-ref="confirmPassword.container"
-            id="confirmPassword.container"
-            className="textBox"
-            type="password"
-            placeholder="Confirm your Password"
-            style={{
-              borderColor: this.state.confirmPasswordDirty ? this.state.passwordMatch ? 'royalblue' : 'red' : 'gray'
-            }}
-            onKeyUp={this.flagDirty}
-            onChange={this.matchPassword}
-          />
-          <button
-            data-ref="signupButton"
-            id="signupButton"
-            className="button"
-            type="submit"
-            onClick={this.handleSubmit}
-            onSubmit={this.handleSubmit}
-            disabled={!this.state.passwordMatch}
-            style={{
-                backgroundColor: this.state.passwordMatch ? 'royalblue' : 'grey',
-                cursor: this.state.passwordMatch ? 'pointer' : 'not-allowed'
-            }}
-          >
-            Signup
-          </button>
-        </form>
+      <div
+        className="App"
+        style={{
+          height: "480px",
+        }}
+      >
+        <LoginNavBar />
+        <div className="login-container">
+          <form className="login">
+            <input
+              data-ref="signupUsername.container"
+              id="signupUsername.container"
+              className="textBox"
+              type="text"
+              placeholder="Enter your username"
+              onChange={this.handleChange}
+            />
+            <input
+              data-ref="signupEmail.container"
+              id="signupEmail.container"
+              className="textBox"
+              type="email"
+              placeholder="Enter your Email"
+              onChange={this.handleChange}
+            />
+            <input
+              data-ref="signupPassword.container"
+              id="signupPassword.container"
+              className="textBox"
+              type="password"
+              placeholder="Enter your Password"
+              onChange={this.handleChange}
+            />
+            <input
+              data-ref="confirmPassword.container"
+              id="confirmPassword.container"
+              className="textBox"
+              type="password"
+              placeholder="Confirm your Password"
+              style={{
+                borderColor: this.state.confirmPasswordDirty
+                  ? this.state.passwordMatch
+                    ? "royalblue"
+                    : "red"
+                  : "gray",
+              }}
+              onKeyUp={this.flagDirty}
+              onChange={this.matchPassword}
+            />
+            <button
+              data-ref="signupButton"
+              id="signupButton"
+              className="button"
+              type="submit"
+              onClick={this.handleSubmit}
+              onSubmit={this.handleSubmit}
+              disabled={!this.state.passwordMatch}
+              style={{
+                backgroundColor: this.state.passwordMatch
+                  ? "royalblue"
+                  : "grey",
+                cursor: this.state.passwordMatch ? "pointer" : "not-allowed",
+              }}
+            >
+              Signup
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
