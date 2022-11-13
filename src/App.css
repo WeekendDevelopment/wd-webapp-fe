@@ -1,62 +1,86 @@
+
 .App {
-  text-align: center;
-  position: absolute;
-  width: 500px;
-  top: 200px;
-  left: 500px;
-  overflow: hidden;
-  border-width: 5px;
-  border-style: solid;
+  background: rgb(99, 39, 120);
 }
 
-#navTable {
-  width: 100%;
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.navbar-elements {
-  width: 50%;
-  height: 30px;
-}
-
-.redirect {
-  width: 100%;
-  height: 100%;
-  border: none;
+.Auth-form {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
   background-color: white;
 }
 
-.redirect:hover,
-.navbar-elements:hover {
-  background-color: royalblue;
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
 }
 
-.login {
-  width: 490px;
-  height: 290px;
+.Auth-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
 }
 
-.textBox,
-.button {
-  width: 300px;
-  height: 50px;
-  border-radius: 10px;
-  border-style: solid;
-  margin-top: 30px;
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
 }
 
-.textBox {
-  padding-left: 10px;
-  outline: none;
+
+body {
+  background: rgb(99, 39, 120)
 }
 
-.textBox:focus {
-  border-width: 4px;
-  border-color: royalblue;
+.form-control:focus {
+  box-shadow: none;
+  border-color: #BA68C8
 }
 
-.button {
-  border-width: 0px;
-  background-color: royalblue;
-  color: white;
-  font-size: 18px;
+.profile-button {
+  background: rgb(99, 39, 120);
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #682773
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
+
+.add-experience:hover {
+  background: #BA68C8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #BA68C8
 }
