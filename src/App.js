@@ -18,7 +18,7 @@ class App extends React.Component {
     this.handleDataLoad = this.handleDataLoad.bind(this);
   }
 
-  handleDataLoad(dataObj, statusCode, authenticated) {
+  handleDataLoad(dataObj, statusCode,authenticated) {
     this.setState({
       data: dataObj,
       statusCode: statusCode,
@@ -45,7 +45,7 @@ class App extends React.Component {
             path="/signup"
             element={<Signup handleDataLoad={this.handleDataLoad} />}
           ></Route>
-          {this.state.authenticated ? (
+          {this.state.authenticated && (
             <Route
               exact
               path="/home"
@@ -56,14 +56,16 @@ class App extends React.Component {
                 />
               }
             ></Route>
-          ) : (
+          )}
+          {this.state.authenticated && (
             <Route
               exact
-              path="/signin"
-              element={<Signin handleDataLoad={this.handleDataLoad} />}
+              path="/profile"
+              element={
+                <Profile />
+              }
             ></Route>
-          )}
-          <Route exact path="/profile" element={<Profile />}></Route>
+          )}          
         </Routes>
       </BrowserRouter>
     );
