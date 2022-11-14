@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Auth from "./Auth"
-import Signin from "./signin"
-import Signup from "./signup"
-import Home from "./home"
-import Profile from "./profile"
+import Signin from "./Signin"
+import Signup from "./Signup"
+import Home from "./Home"
+import Profile from "./Profile"
 class App extends React.Component {
   constructor(props) {
       super(props);

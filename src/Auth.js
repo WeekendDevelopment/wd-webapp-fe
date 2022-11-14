@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
-import Signin from "./signin";
-import Signup from "./signup";
+import Signin from "./Signin";
+import Signup from "./Signup";
 
 
 
