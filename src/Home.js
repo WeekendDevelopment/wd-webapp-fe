@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   render() {
-    if(this.props.statusCode === 200) {
+    if (this.props.statusCode === 200) {
       return (
         <div>
           <p>{this.props.data}</p>

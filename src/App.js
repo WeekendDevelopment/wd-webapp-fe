@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: "",
-      statusCode: ""
+      statusCode: "",
     };
 
     this.handleDataLoad = this.handleDataLoad.bind(this);
@@ -20,7 +20,7 @@ class App extends React.Component {
   handleDataLoad(dataObj, statusCode) {
     this.setState({
       data: dataObj,
-      statusCode: statusCode
+      statusCode: statusCode,
     });
   }
 
@@ -46,7 +46,9 @@ class App extends React.Component {
           <Route
             exact
             path="/home"
-            element={<Home data={this.state.data} statusCode={this.state.statusCode}/>}
+            element={
+              <Home data={this.state.data} statusCode={this.state.statusCode} />
+            }
           ></Route>
           <Route exact path="/profile" element={<Profile />}></Route>
         </Routes>

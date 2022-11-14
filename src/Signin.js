@@ -63,7 +63,7 @@ class Signin extends React.Component {
             this.setState({
               dataLoaded: true,
               data: "Failed to Connect",
-              statusCode: 500
+              statusCode: 500,
             });
           } else {
             this.setState({
@@ -74,7 +74,7 @@ class Signin extends React.Component {
                 ",\n message: " +
                 err.response.data +
                 " }",
-                statusCode: err.response.status
+              statusCode: err.response.status,
             });
           }
         }
