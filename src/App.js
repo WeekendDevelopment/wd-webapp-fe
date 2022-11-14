@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,redirect as Redirect } from "react-router-dom";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import Home from "./Home";
@@ -45,7 +45,7 @@ class App extends React.Component {
             path="/signup"
             element={<Signup handleDataLoad={this.handleDataLoad} />}
           ></Route>
-          {this.state.authenticated && (
+          {this.state.authenticated ? (
             <Route
               exact
               path="/home"
@@ -56,16 +56,16 @@ class App extends React.Component {
                 />
               }
             ></Route>
-          )}
-          {this.state.authenticated && (
+          ):<Redirect to='/signin' />}
+           {this.state.authenticated ? (
             <Route
               exact
               path="/profile"
               element={
-                <Profile />
+                <Profile/>
               }
             ></Route>
-          )}          
+          ):<Redirect to='/signin' />}
         </Routes>
       </BrowserRouter>
     );
