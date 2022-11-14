@@ -1,11 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route,redirect as Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import Home from "./Home";
 import Profile from "./Profile";
+import PrivateRoute from "./PrivateRoute";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,7 @@ class App extends React.Component {
     this.handleDataLoad = this.handleDataLoad.bind(this);
   }
 
-  handleDataLoad(dataObj, statusCode,authenticated) {
+  handleDataLoad(dataObj, statusCode, authenticated) {
     this.setState({
       data: dataObj,
       statusCode: statusCode,
@@ -45,27 +46,16 @@ class App extends React.Component {
             path="/signup"
             element={<Signup handleDataLoad={this.handleDataLoad} />}
           ></Route>
-          {this.state.authenticated ? (
-            <Route
-              exact
-              path="/home"
-              element={
-                <Home
-                  data={this.state.data}
-                  statusCode={this.state.statusCode}
-                />
-              }
-            ></Route>
-          ):<Redirect to='/signin' />}
-           {this.state.authenticated ? (
-            <Route
-              exact
-              path="/profile"
-              element={
-                <Profile/>
-              }
-            ></Route>
-          ):<Redirect to='/signin' />}
+          <Route exact path='/' element={<PrivateRoute/>}>
+            <Route exact path='/home' element={
+              <Home data={this.state.data} statusCode={this.state.statusCode} />
+            }/>
+          </Route>
+          <Route exact path='/' element={<PrivateRoute/>}>
+            <Route exact path='/profile' element={
+              <Profile />
+            }/>
+          </Route>
         </Routes>
       </BrowserRouter>
     );
