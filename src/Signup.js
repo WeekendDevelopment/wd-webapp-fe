@@ -112,53 +112,53 @@ class Signup extends React.Component {
       this.props.handleDataLoad(this.state.data);
     }
     return (
-        <div className="Auth-form-container">
-            <form className="Auth-form" onSubmit={this.handleSubmit}>
-                <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign Up</h3>
-                    <div className="text-center">
-                    Already registered?{" "}
-                    <Link to="/signin">
-                        <span id="loginRedirect" className="redirect">
-                        Signin
-                        </span>
-                    </Link>
-                    </div>
-                    <div className="form-group mt-3">
-                    <label>Full Name</label>
-                    <input
-                        type="text"
-                        className="form-control mt-1"
-                        placeholder="e.g Jane Doe"
-                        onChange={this.handleChange}
-                    />
-                    </div>
-                    <div className="form-group mt-3">
-                    <label>Email address</label>
-                    <input
-                        type="email"
-                        className="form-control mt-1"
-                        placeholder="Email Address"
-                        onChange={this.handleChange}
-                    />
-                    </div>
-                    <div className="form-group mt-3">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control mt-1"
-                        placeholder="Password"
-                        onChange={this.handleChange}
-                    />
-                    </div>
-                    <div className="d-grid gap-2 mt-3">
-                    <button type="submit" className="btn btn-primary">
-                        Submit
-                    </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+      <div className="Auth-form-container">
+        <form className="Auth-form" onSubmit={this.handleSubmit}>
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">Sign Up</h3>
+            <div className="text-center">
+              Already registered?{" "}
+              <Link to="/signin">
+                <span id="loginRedirect" className="redirect">
+                  Signin
+                </span>
+              </Link>
+            </div>
+            <div className="form-group mt-3">
+              <label>Full Name</label>
+              <input
+                type="text"
+                className="form-control mt-1"
+                placeholder="e.g Jane Doe"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Email address</label>
+              <input
+                type="email"
+                className="form-control mt-1"
+                placeholder="Email Address"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     );
   }
 }

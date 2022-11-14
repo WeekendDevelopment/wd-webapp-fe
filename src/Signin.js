@@ -4,8 +4,6 @@ import { Navigate, Link } from "react-router-dom";
 import Constants from "./Constants";
 import Encryption from "./Encryption";
 
-
-
 class Signin extends React.Component {
   constructor(props) {
     super(props);
@@ -91,54 +89,51 @@ class Signin extends React.Component {
       return <Navigate push to="/signin" />;
     }
     return (
-      <div className="App" style={{height: "330px",}}>
+      <div className="App" style={{ height: "330px" }}>
         <div className="Auth-form-container">
-            <form className="Auth-form" onSubmit={this.handleSubmit}>
-                <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign In</h3>
-                    <div className="text-center">
-                    Not registered yet?{" "}
-                    <Link to="/signup">
-                        <span id="loginRedirect" className="redirect">
-                        Signup
-                        </span>
-                    </Link>
-                    </div>
-                    <div className="form-group mt-3">
-                    <label>Username</label>
-                    <input
-                        type="text"
-                        className="form-control mt-1"
-                        placeholder="Enter Username"
-                        onChange={this.handleChange}
-                    />
-                    </div>
-                    <div className="form-group mt-3">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control mt-1"
-                        placeholder="Enter password"
-                        onChange={this.handleChange}
-                    />
-                    </div>
-                    <div className="d-grid gap-2 mt-3">
-                    <button type="submit" className="btn btn-primary">
-                        Submit
-                    </button>
-                    </div>
-                    <p className="text-center mt-2">
-                    <a href="./youtube.com">Forgot password?</a>
-                    </p>
-                </div>
-            </form>
+          <form className="Auth-form" onSubmit={this.handleSubmit}>
+            <div className="Auth-form-content">
+              <h3 className="Auth-form-title">Sign In</h3>
+              <div className="text-center">
+                Not registered yet?{" "}
+                <Link to="/signup">
+                  <span id="loginRedirect" className="redirect">
+                    Signup
+                  </span>
+                </Link>
+              </div>
+              <div className="form-group mt-3">
+                <label>Username</label>
+                <input
+                  type="text"
+                  className="form-control mt-1"
+                  placeholder="Enter Username"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group mt-3">
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control mt-1"
+                  placeholder="Enter password"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="d-grid gap-2 mt-3">
+                <button type="submit" className="btn btn-primary">
+                  Submit
+                </button>
+              </div>
+              <p className="text-center mt-2">
+                <a href="./youtube.com">Forgot password?</a>
+              </p>
+            </div>
+          </form>
         </div>
-        
       </div>
     );
   }
 }
 
 export default Signin;
-
-
