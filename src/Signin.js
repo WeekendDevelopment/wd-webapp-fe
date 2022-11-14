@@ -98,7 +98,7 @@ class Signin extends React.Component {
       this.props.handleDataLoad(
         this.state.data,
         this.state.statusCode,
-        this.state.authenticated,
+        this.state.authenticated
       );
       return <Navigate push to="/home" />;
     }
