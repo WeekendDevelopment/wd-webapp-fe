@@ -3,7 +3,7 @@ import axios from "axios";
 import Constants from "./Constants";
 import Encryption from "./Encryption";
 
-import { Link } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,7 @@ class Signup extends React.Component {
       email: "",
       dataLoaded: false,
       data: "",
+      statusCode: "",
       passwordMatch: false,
       confirmPasswordDirty: false,
     };
@@ -66,6 +67,7 @@ class Signup extends React.Component {
           this.setState({
             dataLoaded: true,
             data: response.data,
+            statusCode: 204
           });
         },
         (err) => {
@@ -73,6 +75,7 @@ class Signup extends React.Component {
             this.setState({
               dataLoaded: true,
               data: "Failed to Connect",
+              statusCode: 500
             });
           } else {
             this.setState({
@@ -83,6 +86,7 @@ class Signup extends React.Component {
                 ",\n message: " +
                 err.response.data +
                 " }",
+                statusCode: err.response.status
             });
           }
         }
@@ -91,6 +95,7 @@ class Signup extends React.Component {
         this.setState({
           dataLoaded: true,
           data: "Failed to connect",
+          statusCode: 500
         });
       });
   }
@@ -109,7 +114,8 @@ class Signup extends React.Component {
 
   render() {
     if (this.state.dataLoaded) {
-      this.props.handleDataLoad(this.state.data);
+      this.props.handleDataLoad(this.state.data, this.state.statusCode);
+      return <Navigate push to="/home" />;
     }
     return (
       <div className="Auth-form-container">

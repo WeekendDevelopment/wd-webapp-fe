@@ -11,27 +11,43 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: "",
+      statusCode: ""
     };
 
     this.handleDataLoad = this.handleDataLoad.bind(this);
   }
 
-  handleDataLoad(dataObj) {
+  handleDataLoad(dataObj, statusCode) {
     this.setState({
-      dataLoaded: true,
       data: dataObj,
+      statusCode: statusCode
     });
-    console.log(this.state);
   }
 
   render() {
     return (
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Signin />}></Route>
-          <Route exact path="/signin" element={<Signin />}></Route>
-          <Route exact path="/signup" element={<Signup />}></Route>
-          <Route exact path="/home" element={<Home />}></Route>
+          <Route
+            exact
+            path="/"
+            element={<Signin handleDataLoad={this.handleDataLoad} />}
+          ></Route>
+          <Route
+            exact
+            path="/signin"
+            element={<Signin handleDataLoad={this.handleDataLoad} />}
+          ></Route>
+          <Route
+            exact
+            path="/signup"
+            element={<Signup handleDataLoad={this.handleDataLoad} />}
+          ></Route>
+          <Route
+            exact
+            path="/home"
+            element={<Home data={this.state.data} statusCode={this.state.statusCode}/>}
+          ></Route>
           <Route exact path="/profile" element={<Profile />}></Route>
         </Routes>
       </BrowserRouter>
