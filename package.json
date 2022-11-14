@@ -19,7 +19,8 @@
     "start": "npx prettier -w src && react-scripts start",
     "build": "npx prettier -w src && react-scripts build",
     "test": "npx prettier -w src && react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "npx prettier -w src"
   },
   "devDependencies": {
     "react-scripts": "latest"

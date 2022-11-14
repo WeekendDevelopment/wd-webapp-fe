@@ -11,6 +11,7 @@ class Signin extends React.Component {
       username: "",
       password: "",
       dataLoaded: false,
+      statusCode: "",
       data: "",
     };
 
@@ -54,6 +55,7 @@ class Signin extends React.Component {
           this.setState({
             dataLoaded: true,
             data: response.data,
+            statusCode: response.status,
           });
         },
         (err) => {
@@ -61,6 +63,7 @@ class Signin extends React.Component {
             this.setState({
               dataLoaded: true,
               data: "Failed to Connect",
+              statusCode: 500,
             });
           } else {
             this.setState({
@@ -71,6 +74,7 @@ class Signin extends React.Component {
                 ",\n message: " +
                 err.response.data +
                 " }",
+              statusCode: err.response.status,
             });
           }
         }
@@ -79,14 +83,15 @@ class Signin extends React.Component {
         this.setState({
           dataLoaded: true,
           data: "Failed to connect",
+          statusCode: 500,
         });
       });
   }
 
   render() {
     if (this.state.dataLoaded) {
-      this.props.handleDataLoad(this.state.data);
-      return <Navigate push to="/signin" />;
+      this.props.handleDataLoad(this.state.data, this.state.statusCode);
+      return <Navigate push to="/home" />;
     }
     return (
       <div className="App" style={{ height: "330px" }}>
