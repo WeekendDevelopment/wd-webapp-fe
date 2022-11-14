@@ -6,7 +6,20 @@ import Signin from "./Signin";
 import Signup from "./Signup";
 import Home from "./Home";
 import Profile from "./Profile";
-import PrivateRoute from "./PrivateRoute";
+
+import { Navigate, Outlet } from 'react-router-dom';
+
+// eslint-disable-next-line no-unused-vars
+class PrivateRoute extends React.Component {
+     // determine if authorized, from context or however you're doing it
+    // If authorized, return an outlet that will render child elements
+    // If not, return element that will navigate to login page
+    render(){
+    return (
+          this.state.statusCode===200 ?
+          <Outlet /> :<Navigate to='/signin' />
+        )} 
+}
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -44,12 +57,12 @@ class App extends React.Component {
             path="/signup"
             element={<Signup handleDataLoad={this.handleDataLoad} />}
           ></Route>
-          <Route exact path='/' element={<PrivateRoute/>}>
+          <Route exact path='/' element={<PrivateRoute  handleDataLoad={this.handleDataLoad} />}>
             <Route exact path='/home' element={
               <Home data={this.state.data} statusCode={this.state.statusCode} />
             }/>
           </Route>
-          <Route exact path='/' element={<PrivateRoute/>}>
+          <Route exact path='/' element={<PrivateRoute  handleDataLoad={this.handleDataLoad} />}>
             <Route exact path='/profile' element={
               <Profile />
             }/>
