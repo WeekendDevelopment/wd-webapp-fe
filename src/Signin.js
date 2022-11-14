@@ -1,65 +1,55 @@
 import React from "react";
 import axios from "axios";
+import { Navigate, Link } from "react-router-dom";
 import Constants from "./Constants";
 import Encryption from "./Encryption";
 
-import { Link } from "react-router-dom";
-class Signup extends React.Component {
+
+
+class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: "",
-      passwordHash: "",
-      email: "",
+      username: "",
+      password: "",
       dataLoaded: false,
       data: "",
-      passwordMatch: false,
-      confirmPasswordDirty: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.matchPassword = this.matchPassword.bind(this);
-    this.signup = this.signup.bind(this);
-    this.flagDirty = this.flagDirty.bind(this);
+    this.login = this.login.bind(this);
   }
 
   handleChange(event) {
     this.setState({
-      userId:
-        event.target.type === "text" ? event.target.value : this.state.userId,
-      passwordHash:
+      username:
+        event.target.type === "text" ? event.target.value : this.state.username,
+      password:
         event.target.type === "password"
           ? event.target.value
-          : this.state.passwordHash,
-      email:
-        event.target.type === "email" ? event.target.value : this.state.email,
+          : this.state.password,
     });
   }
 
   handleSubmit(event) {
-    this.signup();
+    this.login();
     event.preventDefault();
   }
 
-  matchPassword(event) {
-    if (event.target.value === this.state.passwordHash) {
-      this.setState({
-        passwordMatch: true,
-      });
-    } else {
-      this.setState({
-        passwordMatch: false,
-      });
-    }
+  handleDataLoad(dataObj) {
+    this.setState({
+      dataLoaded: true,
+      data: dataObj,
+    });
+    console.log(this.state);
   }
 
-  async signup() {
+  async login() {
     axios
-      .post(Constants.BASE_API_URL + "/signup", {
-        userId: this.state.userId,
-        passwordHash: await Encryption.encryptPassword(this.state.passwordHash),
-        email: this.state.email,
+      .post(Constants.BASE_API_URL + "/login", {
+        username: this.state.username,
+        password: await Encryption.encryptPassword(this.state.password),
       })
       .then(
         (response) => {
@@ -95,50 +85,31 @@ class Signup extends React.Component {
       });
   }
 
-  flagDirty(event) {
-    if (event.target.value === "") {
-      this.setState({
-        confirmPasswordDirty: false,
-      });
-    } else {
-      this.setState({
-        confirmPasswordDirty: true,
-      });
-    }
-  }
-
   render() {
     if (this.state.dataLoaded) {
       this.props.handleDataLoad(this.state.data);
+      return <Navigate push to="/signin" />;
     }
     return (
+      <div className="App" style={{height: "330px",}}>
         <div className="Auth-form-container">
             <form className="Auth-form" onSubmit={this.handleSubmit}>
                 <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign Up</h3>
+                    <h3 className="Auth-form-title">Sign In</h3>
                     <div className="text-center">
-                    Already registered?{" "}
-                    <Link to="/signin">
+                    Not registered yet?{" "}
+                    <Link to="/signup">
                         <span id="loginRedirect" className="redirect">
-                        Signin
+                        Signup
                         </span>
                     </Link>
                     </div>
                     <div className="form-group mt-3">
-                    <label>Full Name</label>
+                    <label>Username</label>
                     <input
                         type="text"
                         className="form-control mt-1"
-                        placeholder="e.g Jane Doe"
-                        onChange={this.handleChange}
-                    />
-                    </div>
-                    <div className="form-group mt-3">
-                    <label>Email address</label>
-                    <input
-                        type="email"
-                        className="form-control mt-1"
-                        placeholder="Email Address"
+                        placeholder="Enter Username"
                         onChange={this.handleChange}
                     />
                     </div>
@@ -147,7 +118,7 @@ class Signup extends React.Component {
                     <input
                         type="password"
                         className="form-control mt-1"
-                        placeholder="Password"
+                        placeholder="Enter password"
                         onChange={this.handleChange}
                     />
                     </div>
@@ -156,11 +127,18 @@ class Signup extends React.Component {
                         Submit
                     </button>
                     </div>
+                    <p className="text-center mt-2">
+                    <a href="./youtube.com">Forgot password?</a>
+                    </p>
                 </div>
             </form>
         </div>
+        
+      </div>
     );
   }
 }
 
-export default Signup;
+export default Signin;
+
+
