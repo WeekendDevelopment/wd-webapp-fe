@@ -12,7 +12,6 @@ class Signin extends React.Component {
       password: "",
       dataLoaded: false,
       statusCode: "",
-      authenticated: false,
       data: "",
     };
 
@@ -57,7 +56,6 @@ class Signin extends React.Component {
             dataLoaded: true,
             data: response.data,
             statusCode: response.status,
-            authenticated: true,
           });
         },
         (err) => {
@@ -66,7 +64,6 @@ class Signin extends React.Component {
               dataLoaded: true,
               data: "Failed to Connect",
               statusCode: 500,
-              authenticated: false,
             });
           } else {
             this.setState({
@@ -78,7 +75,6 @@ class Signin extends React.Component {
                 err.response.data +
                 " }",
               statusCode: err.response.status,
-              authenticated: false,
             });
           }
         }
@@ -88,7 +84,6 @@ class Signin extends React.Component {
           dataLoaded: true,
           data: "Failed to connect",
           statusCode: 500,
-          authenticated: false,
         });
       });
   }
@@ -98,7 +93,6 @@ class Signin extends React.Component {
       this.props.handleDataLoad(
         this.state.data,
         this.state.statusCode,
-        this.state.authenticated
       );
       return <Navigate push to="/home" />;
     }

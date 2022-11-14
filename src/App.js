@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import Home from "./Home";
@@ -13,17 +13,15 @@ class App extends React.Component {
     this.state = {
       data: "",
       statusCode: "",
-      authenticated: false,
     };
 
     this.handleDataLoad = this.handleDataLoad.bind(this);
   }
 
-  handleDataLoad(dataObj, statusCode, authenticated) {
+  handleDataLoad(dataObj, statusCode) {
     this.setState({
       data: dataObj,
       statusCode: statusCode,
-      authenticated: authenticated,
     });
   }
 
