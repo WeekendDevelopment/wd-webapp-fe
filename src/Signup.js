@@ -13,6 +13,7 @@ function Signup(props) {
   const [data, setData] = useState("");
   const [passwordMatch, setPasswordMatch] = useState(false);
   const [confirmPasswordDirty, setConfirmPasswordDirty] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function handleChange(event) {
     if (event.target.type === "text") {
@@ -26,6 +27,7 @@ function Signup(props) {
     }
   }
   function handleSubmit(event) {
+    setLoading(true);
     signup();
     event.preventDefault();
   }
@@ -50,6 +52,7 @@ function Signup(props) {
           setDataLoaded(true);
           setData(response.data);
           setStatusCode(204);
+          setLoading(true);
         },
         (err) => {
           if (err.response == null) {
@@ -90,6 +93,11 @@ function Signup(props) {
   }
   return (
     <div className="Auth-form-container">
+      {loading ? (
+        <div className="loader-container">
+          <div className="spinner"></div>
+        </div>
+      ) : (
       <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
@@ -135,6 +143,7 @@ function Signup(props) {
           </div>
         </div>
       </form>
+      )}
     </div>
   );
 }
