@@ -2,35 +2,28 @@ import axios from "axios";
 import { JSEncrypt } from "jsencrypt";
 import Constants from "./Constants";
 
-class Encryption {
-  static encryptionKey;
-  constructor() {
-    this.loadPublicKeyFromApi = this.loadPublicKeyFromApi.bind(this);
-    Encryption.encryptionKey = "";
-  }
+async function Encryption(passwd) {
+  var encryptionKey;
 
-  static async loadPublicKeyFromApi() {
+  async function loadPublicKeyFromApi() {
     try {
-      if (
-        Encryption.encryptionKey === undefined ||
-        Encryption.encryptionKey === ""
-      ) {
+      if (encryptionKey === undefined || encryptionKey === "") {
         let response = await axios.get(
           Constants.BASE_API_URL + "/encryptionKey"
         );
-        Encryption.encryptionKey = response.data;
+        encryptionKey = response.data;
         return response.data;
       } else {
-        return Encryption.encryptionKey;
+        return encryptionKey;
       }
     } catch (error) {
       console.log(error);
     }
   }
 
-  static async encryptPassword(passwd) {
+  async function encryptPassword() {
     try {
-      let publicKey = await Encryption.loadPublicKeyFromApi();
+      let publicKey = await loadPublicKeyFromApi();
       let encrypt = new JSEncrypt();
       encrypt.setPublicKey(publicKey);
       return encrypt.encrypt(passwd).toString();
@@ -38,6 +31,7 @@ class Encryption {
       console.log(error);
     }
   }
+  return await encryptPassword();
 }
 
 export default Encryption;

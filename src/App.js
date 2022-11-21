@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import Home from "./Home";
@@ -44,15 +44,20 @@ class App extends React.Component {
             path="/signup"
             element={<Signup handleDataLoad={this.handleDataLoad} />}
           ></Route>
-          <Route exact path='/' element={<PrivateRoute/>}>
-            <Route exact path='/home' element={
-              <Home data={this.state.data} statusCode={this.state.statusCode} />
-            }/>
+          <Route exact path="/" element={<PrivateRoute />}>
+            <Route
+              exact
+              path="/home"
+              element={
+                <Home
+                  data={this.state.data}
+                  statusCode={this.state.statusCode}
+                />
+              }
+            />
           </Route>
-          <Route exact path='/' element={<PrivateRoute/>}>
-            <Route exact path='/profile' element={
-              <Profile />
-            }/>
+          <Route exact path="/" element={<PrivateRoute />}>
+            <Route exact path="/profile" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>
