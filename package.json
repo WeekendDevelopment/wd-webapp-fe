@@ -28,6 +28,7 @@
     "prettier": "npx prettier -w src"
   },
   "devDependencies": {
+    "husky": "^8.0.2",
     "react-scripts": "latest"
   },
   "eslintConfig": {
