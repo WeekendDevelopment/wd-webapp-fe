@@ -1,5 +1,5 @@
 .App {
-  background: rgb(99, 39, 120);
+  background: #30c0bd;
 }
 
 .Auth-form-container {
@@ -39,36 +39,36 @@ label {
 }
 
 body {
-  background: rgb(99, 39, 120);
+  background: #30c0bd;
 }
 
 .form-control:focus {
   box-shadow: none;
-  border-color: #ba68c8;
+  border-color: #30c0bd;
 }
 
 .profile-button {
-  background: rgb(99, 39, 120);
+  background: #30c0bd;
   box-shadow: none;
   border: none;
 }
 
 .profile-button:hover {
-  background: #682773;
+  background: #30c0bd;
 }
 
 .profile-button:focus {
-  background: #682773;
+  background: #30c0bd;
   box-shadow: none;
 }
 
 .profile-button:active {
-  background: #682773;
+  background: #30c0bd;
   box-shadow: none;
 }
 
 .back:hover {
-  color: #682773;
+  color: #30c0bd;
   cursor: pointer;
 }
 
@@ -77,8 +77,60 @@ body {
 }
 
 .add-experience:hover {
-  background: #ba68c8;
+  background: #30c0bd;
   color: #fff;
   cursor: pointer;
-  border: solid 1px #ba68c8;
+  border: solid 1px #ffe9c8;
+}
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: #30c0bd;
+  z-index: 1;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #ffe9c8 transparent #ffe9c8 transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.navbar {
+  overflow: hidden;
+  background-color: #ffe9c8;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0px 0px;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: #30c0bd;
+}
+.profilecontent{
+  margin-top: 65px!important;
+  margin-left: 10px !important;
+  min-width: 98%;
 }
