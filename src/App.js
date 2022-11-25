@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -7,62 +7,46 @@ import Signup from "./Signup";
 import Home from "./Home";
 import Profile from "./Profile";
 import PrivateRoute from "./PrivateRoute";
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: "",
-      statusCode: "",
-    };
+function App() {
+  const [statusCode, setStatusCode] = useState("");
+  const [data, setData] = useState("");
 
-    this.handleDataLoad = this.handleDataLoad.bind(this);
+  function handleDataLoad(dataObj, statusCode) {
+    setData(dataObj);
+    setStatusCode(statusCode);
   }
 
-  handleDataLoad(dataObj, statusCode) {
-    this.setState({
-      data: dataObj,
-      statusCode: statusCode,
-    });
-  }
-
-  render() {
-    return (
-      <BrowserRouter>
-        <Routes>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Signin handleDataLoad={handleDataLoad} />}
+        ></Route>
+        <Route
+          exact
+          path="/signin"
+          element={<Signin handleDataLoad={handleDataLoad} />}
+        ></Route>
+        <Route
+          exact
+          path="/signup"
+          element={<Signup handleDataLoad={handleDataLoad} />}
+        ></Route>
+        <Route exact path="/" element={<PrivateRoute />}>
           <Route
             exact
-            path="/"
-            element={<Signin handleDataLoad={this.handleDataLoad} />}
-          ></Route>
-          <Route
-            exact
-            path="/signin"
-            element={<Signin handleDataLoad={this.handleDataLoad} />}
-          ></Route>
-          <Route
-            exact
-            path="/signup"
-            element={<Signup handleDataLoad={this.handleDataLoad} />}
-          ></Route>
-          <Route exact path="/" element={<PrivateRoute />}>
-            <Route
-              exact
-              path="/home"
-              element={
-                <Home
-                  data={this.state.data}
-                  statusCode={this.state.statusCode}
-                />
-              }
-            />
-          </Route>
-          <Route exact path="/" element={<PrivateRoute />}>
-            <Route exact path="/profile" element={<Profile />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    );
-  }
+            path="/home"
+            element={<Home data={data} statusCode={statusCode} />}
+          />
+        </Route>
+        <Route exact path="/" element={<PrivateRoute />}>
+          <Route exact path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
