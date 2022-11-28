@@ -117,6 +117,7 @@ body {
   top: 0;
   width: 100%;
   padding: 0px 0px;
+  justify-content: center;
 }
 .navbar a {
   float: left;
@@ -129,8 +130,11 @@ body {
 .navbar a:hover {
   color: #30c0bd;
 }
-.profilecontent{
-  margin-top: 65px!important;
+.profilecontent {
+  margin-top: 65px !important;
   margin-left: 10px !important;
   min-width: 98%;
+}
+.homecontent{
+  margin-top: 50px;
 }

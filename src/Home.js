@@ -1,22 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SlUser } from "react-icons/sl";
+import { SlUser, SlLogout, SlHome } from "react-icons/sl";
 
 class Home extends React.Component {
   render() {
-    if (this.props.statusCode === 200) {
+    if (this.props.statusCode != 200) {
       return (
         <div class="home">
           <div class="navbar">
-            <a href="#home">Home</a>
-            <p>{this.props.data}</p>
+            <Link to="/home">
+              <SlHome size={28} />
+            </Link>
             <Link to="/profile">
               <SlUser size={28} />
-            </Link> 
+            </Link>
+            <Link to="/">
+              <SlLogout size={28} />
+            </Link>
           </div>
 
-          <div class="main">
-            <p>Some text some text some text some text..</p>
+          <div class="homecontent">
+            <h1>{this.props.data}</h1>
           </div>
         </div>
       );

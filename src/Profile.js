@@ -1,17 +1,22 @@
 /* eslint-disable react/style-prop-object */
 import React from "react";
 import { Link } from "react-router-dom";
-import { SlUser } from "react-icons/sl";
+import { SlUser, SlLogout, SlHome } from "react-icons/sl";
 
 class Profile extends React.Component {
   render() {
     return (
       <div class="profile">
         <div class="navbar">
-          <Link to="/home">Home</Link>
-          <p>{this.props.data}</p>
+            <p>{this.props.data}</p>
+            <Link to="/home">
+              <SlHome size={28} />
+            </Link>
           <Link to="/profile">
             <SlUser size={28} />
+          </Link>
+          <Link to="/">
+            <SlLogout size={28} />
           </Link>
         </div>
         <div class="profilecontent container rounded bg-white mt-2 mb-5">
@@ -164,7 +169,11 @@ class Profile extends React.Component {
                 </div>
                 <div class="col-md-12">
                   <label class="labels">Gender</label>
-                  <select type="text" className="form-control" placeholder="Gender">
+                  <select
+                    type="text"
+                    className="form-control"
+                    placeholder="Gender"
+                  >
                     <option value="no preference">No Preference</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
