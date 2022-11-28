@@ -8,10 +8,10 @@ class Profile extends React.Component {
     return (
       <div class="profile">
         <div class="navbar">
-            <p>{this.props.data}</p>
-            <Link to="/home">
-              <SlHome size={28} />
-            </Link>
+          <p>{this.props.data}</p>
+          <Link to="/home">
+            <SlHome size={28} />
+          </Link>
           <Link to="/profile">
             <SlUser size={28} />
           </Link>
