@@ -5,7 +5,7 @@ import Encryption from "./Encryption";
 
 import { Navigate, Link } from "react-router-dom";
 function Signup(props) {
-  const [userId, setUserId] = useState("");
+  const [fullname, setFullname] = useState("");
   const [passwordHash, setPasswordHash] = useState("");
   const [email, setEmail] = useState("");
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -15,7 +15,7 @@ function Signup(props) {
 
   function handleChange(event) {
     if (event.target.type === "text") {
-      setUserId(event.target.value);
+      setFullname(event.target.value);
     }
     if (event.target.type === "password") {
       setPasswordHash(event.target.value);
@@ -33,7 +33,7 @@ function Signup(props) {
   async function signup() {
     axios
       .post(Constants.BASE_API_URL + "/signup", {
-        userId: userId,
+        fullname: fullname,
         passwordHash: await Encryption(passwordHash),
         email: email,
       })
