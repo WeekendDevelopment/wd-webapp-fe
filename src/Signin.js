@@ -88,11 +88,11 @@ function Signin(props) {
                 </Link>
               </div>
               <div className="form-group mt-3">
-                <label>Email</label>
+                <label>Email ID</label>
                 <input
                   type="email"
                   className="form-control mt-1"
-                  placeholder="Enter Email ID"
+                  placeholder="Enter email"
                   onChange={handleChange}
                 />
               </div>
