@@ -40,6 +40,11 @@ label {
 
 body {
   background: #30c0bd;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.42857143;
+  margin-top:20px;
+  color: #767676;
 }
 
 .form-control:focus {
@@ -117,6 +122,9 @@ body {
   top: 0;
   width: 100%;
   padding: 0px 0px;
+  justify-content: center;
+  z-index: 9999;
+  float: left;
 }
 .navbar a {
   float: left;
@@ -129,8 +137,65 @@ body {
 .navbar a:hover {
   color: #30c0bd;
 }
-.profilecontent{
-  margin-top: 65px!important;
+.profilecontent {
+  margin-top: 65px !important;
   margin-left: 10px !important;
   min-width: 98%;
+}
+.homecontent {
+  margin-top: 50px;
+}
+
+/* home-chat-app */
+.card{
+  margin: 0em;
+}
+.chatboxes{
+  text-decoration: none;
+  display: block;
+  margin: 20px 0px 20px 25px;
+  color: dimgray;
+}
+.chat-online {
+    color: #34ce57
+}
+
+.chat-offline {
+    color: #e4606d
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 800px;
+    overflow-y: scroll
+}
+
+.chat-message-left,
+.chat-message-right {
+    display: flex;
+    flex-shrink: 0
+}
+
+.chat-message-left {
+    margin-right: auto
+}
+
+.chat-message-right {
+    flex-direction: row-reverse;
+    margin-left: auto
+}
+.py-3 {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.px-4 {
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+}
+.flex-grow-0 {
+    flex-grow: 0!important;
+}
+.border-top {
+    border-top: 1px solid #dee2e6!important;
 }
