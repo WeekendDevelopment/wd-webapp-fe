@@ -11,8 +11,6 @@ function Signup(props) {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [statusCode, setStatusCode] = useState("");
   const [data, setData] = useState("");
-  const [passwordMatch, setPasswordMatch] = useState(false);
-  const [confirmPasswordDirty, setConfirmPasswordDirty] = useState(false);
   const [loading, setLoading] = useState(false);
 
   function handleChange(event) {
@@ -30,14 +28,6 @@ function Signup(props) {
     setLoading(true);
     signup();
     event.preventDefault();
-  }
-
-  function matchPassword(event) {
-    if (event.target.value === passwordHash) {
-      setPasswordMatch(true);
-    } else {
-      setPasswordMatch(false);
-    }
   }
 
   async function signup() {
@@ -77,14 +67,6 @@ function Signup(props) {
         setData("Failed to connect");
         setStatusCode(500);
       });
-  }
-
-  function flagDirty(event) {
-    if (event.target.value === "") {
-      setConfirmPasswordDirty(false);
-    } else {
-      setConfirmPasswordDirty(true);
-    }
   }
 
   if (dataLoaded) {

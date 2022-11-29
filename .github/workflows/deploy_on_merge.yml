@@ -1,0 +1,43 @@
+#Workflow name
+name: CI/CD Pipeline
+on:
+  push:
+    branches: [ main ]
+jobs:
+  #Build job
+  node_pipeline:
+    name: Node.js Pipeline
+    permissions:
+      id-token: write
+      contents: read
+    #Run on Ubuntu using the latest version
+    runs-on: ubuntu-latest
+    #Job's steps
+    steps:
+      #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
+      - uses: actions/checkout@v3
+      #Set up Node 18
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      #Node Dependency Installation
+      - name: Installing Dependencies
+        run: npm install
+      #Run Node Build
+      - name: Run npm build
+        run: npm run build
+      #GCP Authentication
+      - name: Authenticate to Google Cloud
+        uses: 'google-github-actions/auth@v1'
+        with:
+          with:
+          create_credentials_file: true
+          workload_identity_provider: 'projects/181353056799/locations/global/workloadIdentityPools/wd-webapp-fe-pool/providers/github'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+      #GCP Deployment
+      - name: Deploy to Google Cloud
+        uses: 'google-github-actions/deploy-appengine@v1'
+        with:
+          project_id: '${{ secrets.GCP_PROJECT }}'
