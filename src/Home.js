@@ -37,7 +37,6 @@ class Home extends React.Component {
                     </div>
 
                     <a href="/home" class="chatboxes">
-                      <div class="badge bg-success float-right">5</div>
                       <div class="d-flex align-items-start">
                         <img
                           src="https://bootdey.com/img/Content/avatar/avatar5.png"
@@ -46,17 +45,16 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Vanessa Tucker
-                          <div class="small">
-                            <span class="fas fa-circle chat-online"></span>{" "}
+                          <div class="small chat-online">
+                            <span class="fas fa-circle"></span>
                             Online
                           </div>
                         </div>
                       </div>
                     </a>
                     <a href="/home" class="chatboxes">
-                      <div class="badge bg-success float-right">2</div>
                       <div class="d-flex align-items-start">
                         <img
                           src="https://bootdey.com/img/Content/avatar/avatar2.png"
@@ -65,10 +63,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           William Harris
-                          <div class="small">
-                            <span class="fas fa-circle chat-online"></span>{" "}
+                          <div class="small chat-online">
+                            <span class="fas fa-circle "></span>
                             Online
                           </div>
                         </div>
@@ -83,10 +81,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Sharon Lessman
-                          <div class="small">
-                            <span class="fas fa-circle chat-online"></span>{" "}
+                          <div class="small chat-online">
+                            <span class="fas fa-circle "></span>
                             Online
                           </div>
                         </div>
@@ -101,10 +99,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Christina Mason
-                          <div class="small">
-                            <span class="fas fa-circle chat-offline"></span>{" "}
+                          <div class="small chat-offline">
+                            <span class="fas fa-circle chat-offline"></span>
                             Offline
                           </div>
                         </div>
@@ -119,10 +117,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Fiona Green
-                          <div class="small">
-                            <span class="fas fa-circle chat-offline"></span>{" "}
+                          <div class="small chat-offline">
+                            <span class="fas fa-circle chat-offline"></span>
                             Offline
                           </div>
                         </div>
@@ -137,10 +135,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Doris Wilder
-                          <div class="small">
-                            <span class="fas fa-circle chat-offline"></span>{" "}
+                          <div class="small chat-offline">
+                            <span class="fas fa-circle chat-offline"></span>
                             Offline
                           </div>
                         </div>
@@ -155,10 +153,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Haley Kennedy
-                          <div class="small">
-                            <span class="fas fa-circle chat-offline"></span>{" "}
+                          <div class="small chat-offline">
+                            <span class="fas fa-circle chat-offline"></span>
                             Offline
                           </div>
                         </div>
@@ -173,10 +171,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="flex-grow-1 ml-3">
+                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
                           Jennifer Chang
-                          <div class="small">
-                            <span class="fas fa-circle chat-offline"></span>{" "}
+                          <div class="small chat-offline">
+                            <span class="fas fa-circle chat-offline"></span>
                             Offline
                           </div>
                         </div>
@@ -185,7 +183,7 @@ class Home extends React.Component {
 
                     <hr class="d-block d-lg-none mt-1 mb-0" />
                   </div>
-                  <div class="col-12 col-lg-7 col-xl-9">
+                  <div class="chatSideLine col-12 col-lg-7 col-xl-9">
                     <div class="py-2 px-4 border-bottom d-none d-lg-block">
                       <div class="d-flex align-items-center py-1">
                         <div class="position-relative">
@@ -197,7 +195,7 @@ class Home extends React.Component {
                             height="40"
                           />
                         </div>
-                        <div class="flex-grow-1 pl-3">
+                        <div class="flex-grow-1 pl-3" style={{padding: "5px 0px 0px 12px", color: "black"}}>
                           <strong>Sharon Lessman</strong>
                           <div class="text-muted small">
                             <em>Typing...</em>
@@ -282,7 +280,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1">You</div>
+                            <div class="font-weight-bold mb-1"></div>
                             Lorem ipsum dolor sit amet, vis erat denique in,
                             dicunt prodesset te vix.
                           </div>
@@ -303,7 +301,6 @@ class Home extends React.Component {
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                             <div class="font-weight-bold mb-1">
-                              Sharon Lessman
                             </div>
                             Sit meis deleniti eu, pri vidit meliore docendi ut,
                             an eum erat animal commodo.
@@ -324,7 +321,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1">You</div>
+                            <div class="font-weight-bold mb-1"></div>
                             Cum ea graeci tractatos.
                           </div>
                         </div>
@@ -344,7 +341,6 @@ class Home extends React.Component {
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                             <div class="font-weight-bold mb-1">
-                              Sharon Lessman
                             </div>
                             Sed pulvinar, massa vitae interdum pulvinar, risus
                             lectus porttitor magna, vitae commodo lectus mauris
@@ -368,7 +364,6 @@ class Home extends React.Component {
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                             <div class="font-weight-bold mb-1">
-                              Sharon Lessman
                             </div>
                             Cras pulvinar, sapien id vehicula aliquet, diam
                             velit elementum orci.
@@ -389,7 +384,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1">You</div>
+                            <div class="font-weight-bold mb-1"></div>
                             Lorem ipsum dolor sit amet, vis erat denique in,
                             dicunt prodesset te vix.
                           </div>
@@ -410,7 +405,6 @@ class Home extends React.Component {
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                             <div class="font-weight-bold mb-1">
-                              Sharon Lessman
                             </div>
                             Sit meis deleniti eu, pri vidit meliore docendi ut,
                             an eum erat animal commodo.
@@ -431,7 +425,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1">You</div>
+                            <div class="font-weight-bold mb-1"></div>
                             Cum ea graeci tractatos.
                           </div>
                         </div>
@@ -450,7 +444,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1">You</div>
+                            <div class="font-weight-bold mb-1"></div>
                             Morbi finibus, lorem id placerat ullamcorper, nunc
                             enim ultrices massa, id dignissim metus urna eget
                             purus.
@@ -472,7 +466,6 @@ class Home extends React.Component {
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                             <div class="font-weight-bold mb-1">
-                              Sharon Lessman
                             </div>
                             Sed pulvinar, massa vitae interdum pulvinar, risus
                             lectus porttitor magna, vitae commodo lectus mauris
@@ -495,7 +488,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1">You</div>
+                            <div class="font-weight-bold mb-1"></div>
                             Lorem ipsum dolor sit amet, vis erat denique in,
                             dicunt prodesset te vix.
                           </div>
@@ -516,7 +509,6 @@ class Home extends React.Component {
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                             <div class="font-weight-bold mb-1">
-                              Sharon Lessman
                             </div>
                             Sit meis deleniti eu, pri vidit meliore docendi ut,
                             an eum erat animal commodo.
