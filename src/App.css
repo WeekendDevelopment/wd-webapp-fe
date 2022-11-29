@@ -153,15 +153,24 @@ body {
 .chatboxes {
   text-decoration: none;
   display: block;
-  margin: 20px 0px 20px 25px;
-  color: dimgray;
+  padding: 20px 0px 0px 25px;
+  color: #000000;
 }
+
+.chatBorderLine{
+  border-bottom: 1px solid #dee2e6!important;
+}
+
+.chatSideLine{
+  border-left: 1px solid #dee2e6!important;
+}
+
 .chat-online {
   color: #34ce57;
 }
 
 .chat-offline {
-  color: #e4606d;
+  color: dimgrey;
 }
 
 .chat-messages {
@@ -169,6 +178,7 @@ body {
   flex-direction: column;
   max-height: 800px;
   overflow-y: scroll;
+  color: #212529;
 }
 
 .chat-message-left,
