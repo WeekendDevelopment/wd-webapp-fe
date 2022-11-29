@@ -25,6 +25,9 @@ jobs:
       #Node Dependency Installation
       - name: Installing Dependencies
         run: npm install
+      #Fix package-lock.json if it is broken
+      - name: Fixing package-lock.json
+        run: npm install && npm ci
       #Run Node Build
       - name: Run npm build
         run: npm run build
