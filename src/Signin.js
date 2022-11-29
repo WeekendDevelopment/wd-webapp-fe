@@ -5,7 +5,7 @@ import Constants from "./Constants";
 import Encryption from "./Encryption";
 
 function Signin(props) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [dataLoaded, setDataLoaded] = useState(false);
   const [statusCode, setStatusCode] = useState("");
@@ -13,8 +13,8 @@ function Signin(props) {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
-    if (event.target.type === "text") {
-      setUsername(event.target.value);
+    if (event.target.type === "email") {
+      setEmail(event.target.value);
     }
     if (event.target.type === "password") {
       setPassword(event.target.value);
@@ -30,7 +30,7 @@ function Signin(props) {
   async function login() {
     axios
       .post(Constants.BASE_API_URL + "/login", {
-        username: username,
+        email: email,
         password: await Encryption(password),
       })
       .then(
@@ -88,11 +88,11 @@ function Signin(props) {
                 </Link>
               </div>
               <div className="form-group mt-3">
-                <label>Username</label>
+                <label>Email</label>
                 <input
-                  type="text"
+                  type="email"
                   className="form-control mt-1"
-                  placeholder="Enter Username"
+                  placeholder="Enter Email ID"
                   onChange={handleChange}
                 />
               </div>
