@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SlUser, SlLogout, SlHome } from "react-icons/sl";
+import { MdLocalPhone, MdVideocam, MdMenu } from "react-icons/md";
 
 class Home extends React.Component {
   render() {
-    if (this.props.statusCode === 200) {
+    if (this.props.statusCode !== 200) {
       return (
         <div class="home">
           <div class="navbar">
@@ -39,13 +40,16 @@ class Home extends React.Component {
                     <a href="/home" class="chatboxes">
                       <div class="d-flex align-items-start">
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                          src="https://i.ibb.co/vvymxPV/warlord.jpg"
                           class="rounded-circle mr-1"
                           alt="Vanessa Tucker"
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Vanessa Tucker
                           <div class="small chat-online">
                             <span class="fas fa-circle"></span>
@@ -57,13 +61,16 @@ class Home extends React.Component {
                     <a href="/home" class="chatboxes">
                       <div class="d-flex align-items-start">
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                          src="https://i.ibb.co/bsJf84g/prudhvi.jpg"
                           class="rounded-circle mr-1"
                           alt="William Harris"
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           William Harris
                           <div class="small chat-online">
                             <span class="fas fa-circle "></span>
@@ -75,13 +82,16 @@ class Home extends React.Component {
                     <a href="/home" class="chatboxes">
                       <div class="d-flex align-items-start">
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                          src="https://i.ibb.co/VV7dwXw/nithin.png"
                           class="rounded-circle mr-1"
                           alt="Sharon Lessman"
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Sharon Lessman
                           <div class="small chat-online">
                             <span class="fas fa-circle "></span>
@@ -99,7 +109,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Christina Mason
                           <div class="small chat-offline">
                             <span class="fas fa-circle chat-offline"></span>
@@ -117,7 +130,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Fiona Green
                           <div class="small chat-offline">
                             <span class="fas fa-circle chat-offline"></span>
@@ -135,7 +151,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Doris Wilder
                           <div class="small chat-offline">
                             <span class="fas fa-circle chat-offline"></span>
@@ -153,7 +172,10 @@ class Home extends React.Component {
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Haley Kennedy
                           <div class="small chat-offline">
                             <span class="fas fa-circle chat-offline"></span>
@@ -165,13 +187,16 @@ class Home extends React.Component {
                     <a href="/home" class="chatboxes">
                       <div class="d-flex align-items-start">
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                          src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                           class="rounded-circle mr-1"
                           alt="Jennifer Chang"
                           width="40"
                           height="40"
                         />
-                        <div class="chatBorderLine flex-grow-1 ml-3" style={{padding: "5px 0px 20px 12px"}}>
+                        <div
+                          class="chatBorderLine flex-grow-1 ml-3"
+                          style={{ padding: "5px 0px 20px 12px" }}
+                        >
                           Jennifer Chang
                           <div class="small chat-offline">
                             <span class="fas fa-circle chat-offline"></span>
@@ -188,78 +213,43 @@ class Home extends React.Component {
                       <div class="d-flex align-items-center py-1">
                         <div class="position-relative">
                           <img
-                            src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                            src="https://i.ibb.co/VV7dwXw/nithin.png"
                             class="rounded-circle mr-1"
                             alt="Sharon Lessman"
                             width="40"
                             height="40"
                           />
                         </div>
-                        <div class="flex-grow-1 pl-3" style={{padding: "5px 0px 0px 12px", color: "black"}}>
+                        <div
+                          class="flex-grow-1 pl-3"
+                          style={{
+                            padding: "5px 0px 0px 12px",
+                            color: "black",
+                          }}
+                        >
                           <strong>Sharon Lessman</strong>
                           <div class="text-muted small">
                             <em>Typing...</em>
                           </div>
                         </div>
                         <div>
-                          <button class="btn btn-primary btn-lg mr-1 px-3">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="feather feather-phone feather-lg"
-                            >
-                              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                          </button>
-                          <button class="btn btn-info btn-lg mr-1 px-3 d-none d-md-inline-block">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="feather feather-video feather-lg"
-                            >
-                              <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                              <rect
-                                x="1"
-                                y="5"
-                                width="15"
-                                height="14"
-                                rx="2"
-                                ry="2"
-                              ></rect>
-                            </svg>
-                          </button>
-                          <button class="btn btn-light border btn-lg px-3">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="feather feather-more-horizontal feather-lg"
-                            >
-                              <circle cx="12" cy="12" r="1"></circle>
-                              <circle cx="19" cy="12" r="1"></circle>
-                              <circle cx="5" cy="12" r="1"></circle>
-                            </svg>
-                          </button>
+                          <MdLocalPhone
+                            size={28}
+                            style={{
+                              color: "blue",
+                              margin: "0px 20px 0px 0px",
+                            }}
+                          />
+                          &nbsp;
+                          <MdVideocam
+                            size={28}
+                            style={{
+                              color: "lime",
+                              margin: "0px 20px 0px 0px",
+                            }}
+                          />
+                          &nbsp;
+                          <MdMenu size={28} style={{ color: "black" }} />
                         </div>
                       </div>
                     </div>
@@ -269,7 +259,7 @@ class Home extends React.Component {
                         <div class="chat-message-right pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                               class="rounded-circle mr-1"
                               alt="Chris Wood"
                               width="40"
@@ -280,7 +270,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1"></div>
                             Lorem ipsum dolor sit amet, vis erat denique in,
                             dicunt prodesset te vix.
                           </div>
@@ -289,7 +278,7 @@ class Home extends React.Component {
                         <div class="chat-message-left pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              src="https://i.ibb.co/VV7dwXw/nithin.png"
                               class="rounded-circle mr-1"
                               alt="Sharon Lessman"
                               width="40"
@@ -300,8 +289,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                            <div class="font-weight-bold mb-1">
-                            </div>
                             Sit meis deleniti eu, pri vidit meliore docendi ut,
                             an eum erat animal commodo.
                           </div>
@@ -310,7 +297,7 @@ class Home extends React.Component {
                         <div class="chat-message-right mb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                               class="rounded-circle mr-1"
                               alt="Chris Wood"
                               width="40"
@@ -321,7 +308,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1"></div>
                             Cum ea graeci tractatos.
                           </div>
                         </div>
@@ -329,7 +315,7 @@ class Home extends React.Component {
                         <div class="chat-message-left pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              src="https://i.ibb.co/VV7dwXw/nithin.png"
                               class="rounded-circle mr-1"
                               alt="Sharon Lessman"
                               width="40"
@@ -340,8 +326,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                            <div class="font-weight-bold mb-1">
-                            </div>
                             Sed pulvinar, massa vitae interdum pulvinar, risus
                             lectus porttitor magna, vitae commodo lectus mauris
                             et velit. Proin ultricies placerat imperdiet. Morbi
@@ -352,7 +336,7 @@ class Home extends React.Component {
                         <div class="chat-message-left pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              src="https://i.ibb.co/VV7dwXw/nithin.png"
                               class="rounded-circle mr-1"
                               alt="Sharon Lessman"
                               width="40"
@@ -363,8 +347,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                            <div class="font-weight-bold mb-1">
-                            </div>
                             Cras pulvinar, sapien id vehicula aliquet, diam
                             velit elementum orci.
                           </div>
@@ -373,7 +355,7 @@ class Home extends React.Component {
                         <div class="chat-message-right mb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                               class="rounded-circle mr-1"
                               alt="Chris Wood"
                               width="40"
@@ -384,7 +366,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1"></div>
                             Lorem ipsum dolor sit amet, vis erat denique in,
                             dicunt prodesset te vix.
                           </div>
@@ -393,7 +374,7 @@ class Home extends React.Component {
                         <div class="chat-message-left pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              src="https://i.ibb.co/VV7dwXw/nithin.png"
                               class="rounded-circle mr-1"
                               alt="Sharon Lessman"
                               width="40"
@@ -404,8 +385,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                            <div class="font-weight-bold mb-1">
-                            </div>
                             Sit meis deleniti eu, pri vidit meliore docendi ut,
                             an eum erat animal commodo.
                           </div>
@@ -414,7 +393,7 @@ class Home extends React.Component {
                         <div class="chat-message-right mb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                               class="rounded-circle mr-1"
                               alt="Chris Wood"
                               width="40"
@@ -425,7 +404,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1"></div>
                             Cum ea graeci tractatos.
                           </div>
                         </div>
@@ -433,7 +411,7 @@ class Home extends React.Component {
                         <div class="chat-message-right mb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                               class="rounded-circle mr-1"
                               alt="Chris Wood"
                               width="40"
@@ -444,7 +422,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1"></div>
                             Morbi finibus, lorem id placerat ullamcorper, nunc
                             enim ultrices massa, id dignissim metus urna eget
                             purus.
@@ -454,7 +431,7 @@ class Home extends React.Component {
                         <div class="chat-message-left pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              src="https://i.ibb.co/VV7dwXw/nithin.png"
                               class="rounded-circle mr-1"
                               alt="Sharon Lessman"
                               width="40"
@@ -465,8 +442,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                            <div class="font-weight-bold mb-1">
-                            </div>
                             Sed pulvinar, massa vitae interdum pulvinar, risus
                             lectus porttitor magna, vitae commodo lectus mauris
                             et velit. Proin ultricies placerat imperdiet. Morbi
@@ -477,7 +452,7 @@ class Home extends React.Component {
                         <div class="chat-message-right mb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              src="https://i.ibb.co/Zgcy6zS/evil.jpg"
                               class="rounded-circle mr-1"
                               alt="Chris Wood"
                               width="40"
@@ -488,7 +463,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                            <div class="font-weight-bold mb-1"></div>
                             Lorem ipsum dolor sit amet, vis erat denique in,
                             dicunt prodesset te vix.
                           </div>
@@ -497,7 +471,7 @@ class Home extends React.Component {
                         <div class="chat-message-left pb-4">
                           <div>
                             <img
-                              src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              src="https://i.ibb.co/VV7dwXw/nithin.png"
                               class="rounded-circle mr-1"
                               alt="Sharon Lessman"
                               width="40"
@@ -508,8 +482,6 @@ class Home extends React.Component {
                             </div>
                           </div>
                           <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                            <div class="font-weight-bold mb-1">
-                            </div>
                             Sit meis deleniti eu, pri vidit meliore docendi ut,
                             an eum erat animal commodo.
                           </div>

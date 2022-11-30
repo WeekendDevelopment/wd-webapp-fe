@@ -157,12 +157,12 @@ body {
   color: #000000;
 }
 
-.chatBorderLine{
-  border-bottom: 1px solid #dee2e6!important;
+.chatBorderLine {
+  border-bottom: 1px solid #dee2e6 !important;
 }
 
-.chatSideLine{
-  border-left: 1px solid #dee2e6!important;
+.chatSideLine {
+  border-left: 1px solid #dee2e6 !important;
 }
 
 .chat-online {
