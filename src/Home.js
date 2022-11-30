@@ -2,10 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { SlUser, SlLogout, SlHome } from "react-icons/sl";
 import { MdLocalPhone, MdVideocam, MdMenu } from "react-icons/md";
+import isJwtExpired from "./JwtUtil";
 
 class Home extends React.Component {
   render() {
-    if (this.props.statusCode !== 200) {
+    /*
+  Remember to add a header X-REQUEST-USER which contains email of current user to authenticate JWT token for future api calls
+  currently unauthenticated endpoints are ["/health", "/signin", "/signup", "/encrptionKey"]
+  all other endpoints would require 2 headers in future - Authorization (jwt token) and X-REQUEST-USER (current user email)
+  */
+    if (this.props.statusCode === 200 || !isJwtExpired()) {
       return (
         <div class="home">
           <div class="navbar">
