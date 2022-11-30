@@ -36,9 +36,13 @@ function Signin(props) {
       .then(
         (response) => {
           setDataLoaded(true);
-          setData(response.data);
+          setData(response.data.message);
           setLoading(false);
           setStatusCode(response.status);
+          window.sessionStorage.setItem(
+            "access-token",
+            response.data.signedJwtToken
+          );
         },
         (err) => {
           if (err.response == null) {
