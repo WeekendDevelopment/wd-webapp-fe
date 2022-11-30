@@ -33,14 +33,14 @@ function Signup(props) {
   async function signup() {
     axios
       .post(Constants.BASE_API_URL + "/signup", {
-        fullname: fullname,
+        fullName: fullname,
         passwordHash: await Encryption(passwordHash),
         email: email,
       })
       .then(
         (response) => {
           setDataLoaded(true);
-          setData(response.data);
+          setData(response.data.message);
           setStatusCode(204);
           setLoading(true);
         },

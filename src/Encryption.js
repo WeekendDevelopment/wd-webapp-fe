@@ -11,8 +11,8 @@ async function Encryption(passwd) {
         let response = await axios.get(
           Constants.BASE_API_URL + "/encryptionKey"
         );
-        encryptionKey = response.data;
-        return response.data;
+        encryptionKey = response.data.encryptionKey;
+        return encryptionKey;
       } else {
         return encryptionKey;
       }
