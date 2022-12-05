@@ -41,7 +41,7 @@ class Profile extends React.Component {
                     <label class="labels">First Name</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="first name"
                       value=""
                     />
@@ -50,7 +50,7 @@ class Profile extends React.Component {
                     <label class="labels">Last Name</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       value=""
                       placeholder="last name"
                     />
@@ -61,7 +61,7 @@ class Profile extends React.Component {
                     <label class="labels">Mobile Number</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter phone number"
                       value=""
                     />
@@ -71,7 +71,7 @@ class Profile extends React.Component {
                     <select
                       id="country"
                       name="country"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                     >
                       <option>select country</option>
                       <option value="AF">Afghanistan</option>
@@ -354,7 +354,7 @@ class Profile extends React.Component {
                     <label class="labels">Email ID</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter email id"
                       value=""
                     />
@@ -363,7 +363,7 @@ class Profile extends React.Component {
                     <label class="labels">Status</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter your status"
                       value=""
                     />
@@ -372,7 +372,7 @@ class Profile extends React.Component {
                     <label class="labels">About you</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter about you bio"
                       value=""
                     />

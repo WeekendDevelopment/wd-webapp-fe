@@ -2,6 +2,14 @@
   background: #30c0bd;
 }
 
+.NonEditProfile{
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  pointer-events: none;
+}
+
 .Auth-form-container {
   display: flex;
   justify-content: center;
