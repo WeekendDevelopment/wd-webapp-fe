@@ -10,7 +10,7 @@ function CountrySelector() {
     setValue(value)
   }
 
-  return <Select options={options} value={value} onChange={changeHandler} />
+  return <Select options={options} value={value} className={"form-control NonEditProfile"} onChange={changeHandler} />
 }
 
 export default CountrySelector
