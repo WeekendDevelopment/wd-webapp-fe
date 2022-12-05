@@ -8,6 +8,10 @@
   resize: none;
   outline: none;
   pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
 }
 
 .Auth-form-container {

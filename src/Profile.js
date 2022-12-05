@@ -101,7 +101,7 @@ class Profile extends React.Component {
                 </div>
                 <div class="mt-5 text-center">
                   <button class="btn btn-primary profile-button" type="button">
-                    Save Profile
+                    Edit Details
                   </button>
                 </div>
               </div>
