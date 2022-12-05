@@ -29,9 +29,6 @@ class Profile extends React.Component {
                   width="150px"
                   src="https://i.ibb.co/VV7dwXw/nithin.png"
                 />
-                <span class="font-weight-bold">Thathagaru</span>
-                <span class="text-black-50">thathagaru@gmail.com</span>
-                <span> </span>
               </div>
             </div>
             <div class="col-md-5 border-right">
@@ -41,7 +38,7 @@ class Profile extends React.Component {
                 </div>
                 <div class="row mt-2">
                   <div class="col-md-6">
-                    <label class="labels">Name</label>
+                    <label class="labels">First Name</label>
                     <input
                       type="text"
                       className="form-control"
@@ -50,12 +47,12 @@ class Profile extends React.Component {
                     />
                   </div>
                   <div class="col-md-6">
-                    <label class="labels">Surname</label>
+                    <label class="labels">Last Name</label>
                     <input
                       type="text"
                       className="form-control"
                       value=""
-                      placeholder="surname"
+                      placeholder="last name"
                     />
                   </div>
                 </div>
@@ -70,47 +67,11 @@ class Profile extends React.Component {
                     />
                   </div>
                   <div class="col-md-12">
-                    <label class="labels">Address Line 1</label>
+                    <label class="labels">Country</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="enter address line 1"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">Address Line 2</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="enter address line 2"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">Postcode</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="enter address line 2"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">State</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="enter address line 2"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">Area</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="enter address line 2"
+                      placeholder="Select your country"
                       value=""
                     />
                   </div>
@@ -124,32 +85,21 @@ class Profile extends React.Component {
                     />
                   </div>
                   <div class="col-md-12">
-                    <label class="labels">Education</label>
+                    <label class="labels">Status</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="education"
+                      placeholder="enter your status"
                       value=""
                     />
                   </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-6">
-                    <label class="labels">Country</label>
+                  <div class="col-md-12">
+                    <label class="labels">About you</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="country"
+                      placeholder="enter about you bio"
                       value=""
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="labels">State/Region</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value=""
-                      placeholder="state"
                     />
                   </div>
                 </div>
@@ -157,38 +107,6 @@ class Profile extends React.Component {
                   <button class="btn btn-primary profile-button" type="button">
                     Save Profile
                   </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="p-3 py-5">
-                <div>&nbsp;</div>
-                <div class="d-flex justify-content-between align-items-center experience">
-                  <span>Edit Flatmate Preferences</span>
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Gender</label>
-                  <select
-                    type="text"
-                    className="form-control"
-                    placeholder="Gender"
-                  >
-                    <option value="no preference">No Preference</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Non-binary">Non-binary</option>
-                  </select>
-                </div>{" "}
-                <br />
-                <div class="col-md-12">
-                  <label class="labels">Additional Details</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="additional details"
-                    value=""
-                  />
                 </div>
               </div>
             </div>
