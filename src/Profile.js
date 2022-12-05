@@ -69,7 +69,7 @@ class Profile extends React.Component {
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Country</label>
-                    <CountrySelector/>
+                    <CountrySelector />
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Email ID</label>
@@ -79,6 +79,16 @@ class Profile extends React.Component {
                       placeholder="enter email id"
                       value=""
                     />
+                    <div class="col-md-12">
+                      <label class="labels"> Password</label>
+                      <input
+                        type="password"
+                        className="form-control NonEditProfile"
+                        placeholder="*********"
+                        value=""
+                        readOnly="true"
+                      />
+                    </div>
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Status</label>
