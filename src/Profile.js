@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SlUser, SlLogout, SlHome } from "react-icons/sl";
+import CountrySelector from "./CountrySelector";
 
 class Profile extends React.Component {
   render() {
@@ -41,7 +42,7 @@ class Profile extends React.Component {
                     <label class="labels">First Name</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="first name"
                       value=""
                     />
@@ -50,7 +51,7 @@ class Profile extends React.Component {
                     <label class="labels">Last Name</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       value=""
                       placeholder="last name"
                     />
@@ -61,25 +62,20 @@ class Profile extends React.Component {
                     <label class="labels">Mobile Number</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter phone number"
                       value=""
                     />
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Country</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Select your country"
-                      value=""
-                    />
+                    <CountrySelector/>
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Email ID</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter email id"
                       value=""
                     />
@@ -88,7 +84,7 @@ class Profile extends React.Component {
                     <label class="labels">Status</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter your status"
                       value=""
                     />
@@ -97,7 +93,7 @@ class Profile extends React.Component {
                     <label class="labels">About you</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control NonEditProfile"
                       placeholder="enter about you bio"
                       value=""
                     />
