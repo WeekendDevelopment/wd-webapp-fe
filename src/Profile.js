@@ -9,7 +9,6 @@ class Profile extends React.Component {
     return (
       <div class="profile">
         <div class="navbar">
-          <p>{this.props.data}</p>
           <Link to="/home">
             <SlHome size={28} />
           </Link>
@@ -20,89 +19,105 @@ class Profile extends React.Component {
             <SlLogout size={28} />
           </Link>
         </div>
-        <div class="profilecontent container rounded bg-white mt-2 mb-5">
-          <div class="row">
-            <div class="col-md-3 border-right">
-              <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img
-                  class="rounded-circle mt-5"
-                  alt="PrpfilePic"
-                  width="150px"
-                  src="https://i.ibb.co/VV7dwXw/nithin.png"
-                />
+        <div class="container">
+          <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="account-settings">
+                    <div class="user-profile">
+                      <div class="user-avatar">
+                        <img
+                          src="https://i.ibb.co/VV7dwXw/nithin.png"
+                          alt="NITHIN"
+                        />
+                      </div>
+                      <h5 class="user-name">Nithin Papuru</h5>
+                      <h6 class="user-email">hentai@nithin.com</h6>
+                    </div>
+                    <div class="about">
+                      <h5>About</h5>
+                      <p>I'm Nithin I am Cringe It is me.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-md-5 border-right">
-              <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4 class="text-right">Profile Settings</h4>
-                </div>
-                <div class="row mt-2">
-                  <div class="col-md-6">
-                    <label class="labels">First Name</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      placeholder="first name"
-                      value=""
-                    />
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <h6 class="mb-2 text-primary">Personal Details</h6>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fullName"
+                          placeholder="Enter full name"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label for="eMail">Email</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="eMail"
+                          placeholder="Enter email ID"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label for="status">Status</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="status"
+                          placeholder="Enter a status"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="bio"
+                          placeholder="Enter About you"
+                        />
+                      </div>
+                    </div>
+                    <CountrySelector />
                   </div>
-                  <div class="col-md-6">
-                    <label class="labels">Last Name</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      value=""
-                      placeholder="last name"
-                    />
+                  <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <div class="text-right">
+                        <button
+                          type="button"
+                          id="submit"
+                          name="submit"
+                          class="btn btn-secondary"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          type="button"
+                          id="submit"
+                          name="submit"
+                          class="btn btn-primary"
+                        >
+                          Update
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-12">
-                    <label class="labels">Mobile Number</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      placeholder="enter phone number"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">Country</label>
-                    <CountrySelector/>
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">Email ID</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      placeholder="enter email id"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">Status</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      placeholder="enter your status"
-                      value=""
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="labels">About you</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      placeholder="enter about you bio"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div class="mt-5 text-center">
-                  <button class="btn btn-primary profile-button" type="button">
-                    Edit Details
-                  </button>
                 </div>
               </div>
             </div>
@@ -112,5 +127,4 @@ class Profile extends React.Component {
     );
   }
 }
-
 export default Profile;
