@@ -14,7 +14,7 @@ function CountrySelector() {
     <Select
       options={options}
       value={value}
-      className={"form-control NonEditProfile"}
+      className={"form-control"}
       onChange={changeHandler}
     />
   );
