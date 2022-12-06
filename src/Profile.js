@@ -39,21 +39,12 @@ class Profile extends React.Component {
                 </div>
                 <div class="row mt-2">
                   <div class="col-md-6">
-                    <label class="labels">First Name</label>
+                    <label class="labels">Fullname</label>
                     <input
                       type="text"
                       className="form-control NonEditProfile"
-                      placeholder="first name"
+                      placeholder="Your fullname"
                       value=""
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="labels">Last Name</label>
-                    <input
-                      type="text"
-                      className="form-control NonEditProfile"
-                      value=""
-                      placeholder="last name"
                     />
                   </div>
                 </div>
@@ -63,22 +54,32 @@ class Profile extends React.Component {
                     <input
                       type="text"
                       className="form-control NonEditProfile"
-                      placeholder="enter phone number"
+                      placeholder="Your mobile number"
                       value=""
                     />
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Country</label>
-                    <CountrySelector/>
+                    <CountrySelector />
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Email ID</label>
                     <input
                       type="text"
                       className="form-control NonEditProfile"
-                      placeholder="enter email id"
+                      placeholder="Your email id"
                       value=""
                     />
+                    <div class="col-md-12">
+                      <label class="labels"> Password</label>
+                      <input
+                        type="password"
+                        className="form-control NonEditProfile"
+                        placeholder="*********"
+                        value=""
+                        readOnly="true"
+                      />
+                    </div>
                   </div>
                   <div class="col-md-12">
                     <label class="labels">Status</label>
@@ -94,7 +95,7 @@ class Profile extends React.Component {
                     <input
                       type="text"
                       className="form-control NonEditProfile"
-                      placeholder="enter about you bio"
+                      placeholder="enter about you"
                       value=""
                     />
                   </div>
