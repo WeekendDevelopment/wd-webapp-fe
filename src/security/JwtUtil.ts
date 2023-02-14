@@ -5,7 +5,7 @@ function isJwtExpired() {
   if (jwtToken === "" || jwtToken === undefined || jwtToken === null) {
     return true;
   } else {
-    var jwtExpired = jwt(jwtToken).exp * 1000 < new Date().getTime();
+    var jwtExpired = jwt<any>(jwtToken).exp * 1000 < new Date().getTime();
     return jwtExpired;
   }
 }

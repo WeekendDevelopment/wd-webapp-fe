@@ -4,9 +4,9 @@ import countryList from "react-select-country-list";
 
 function CountrySelector() {
   const [value, setValue] = useState("");
-  const options = useMemo(() => countryList().getData(), []);
+  const options: any = useMemo(() => countryList().getData(), []);
 
-  const changeHandler = (value) => {
+  const changeHandler = (value: any) => {
     setValue(value);
   };
 
