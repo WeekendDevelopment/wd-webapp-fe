@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Constants from "./Constants";
-import Encryption from "./Encryption";
+import { useNavigate } from "react-router-dom";
+import { Constants } from "../constants/Constants";
+import Encryption from "../security/Encryption";
+import { Link } from "react-router-dom";
+import { ErrorHandler } from "../error/ErrorHandler";
+import { Loader } from "../loader/Loader";
+import "./Signup.css";
 
-import { Navigate, Link } from "react-router-dom";
-function Signup(props) {
+export function Signup() {
   const [fullname, setFullname] = useState("");
   const [passwordHash, setPasswordHash] = useState("");
   const [email, setEmail] = useState("");
-  const [dataLoaded, setDataLoaded] = useState(false);
-  const [statusCode, setStatusCode] = useState("");
-  const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
 
-  function handleChange(event) {
+  const navigate = useNavigate();
+
+  function handleChange(event: any) {
     if (event.target.type === "text") {
       setFullname(event.target.value);
     }
@@ -24,7 +27,7 @@ function Signup(props) {
       setEmail(event.target.value);
     }
   }
-  function handleSubmit(event) {
+  function handleSubmit(event: any) {
     setLoading(true);
     signup();
     event.preventDefault();
@@ -39,53 +42,31 @@ function Signup(props) {
       })
       .then(
         (response) => {
-          setDataLoaded(true);
-          setData(response.data.message);
-          setStatusCode(204);
-          setLoading(true);
+          navigate("/login");
         },
         (err) => {
-          if (err.response == null) {
-            setDataLoaded(true);
-            setData("Failed to connect");
-            setStatusCode(500);
-          } else {
-            setDataLoaded(true);
-            setData(
-              "{ status: " +
-                err.response.status +
-                ",\n message: " +
-                err.response.data +
-                " }"
-            );
-            setStatusCode(err.response.status);
-          }
+          navigate("/error", {
+            state: ErrorHandler.getErrorMessage(err),
+          });
         }
       )
       .catch((err) => {
-        setDataLoaded(true);
-        setData("Failed to connect");
-        setStatusCode(500);
+        navigate("/error", {
+          state: ErrorHandler.getErrorMessage(err),
+        });
       });
-  }
-
-  if (dataLoaded) {
-    props.handleDataLoad(data, statusCode);
-    return <Navigate push to="/home" />;
   }
   return (
     <div className="Auth-form-container">
       {loading ? (
-        <div className="loader-container">
-          <div className="spinner"></div>
-        </div>
+        <Loader />
       ) : (
         <form className="Auth-form" onSubmit={handleSubmit}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign Up</h3>
             <div className="text-center">
               Already registered?{" "}
-              <Link to="/signin">
+              <Link to="/login">
                 <span id="loginRedirect" className="redirect">
                   Signin
                 </span>
@@ -129,5 +110,3 @@ function Signup(props) {
     </div>
   );
 }
-
-export default Signup;
