@@ -20,9 +20,7 @@
             "outputPath": "dist/wd-webapp-fe",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -82,10 +80,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -100,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0e2d6551-332a-4f2f-a603-7477f2b8f184"
   }
 }
