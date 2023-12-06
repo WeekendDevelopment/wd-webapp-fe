@@ -3,12 +3,12 @@ import { JSEncrypt } from "jsencrypt";
 import { Constants } from "../constants/Constants";
 
 async function Encryption(passwd: string) {
-  var encryptionKey: string;
+  let encryptionKey: string;
 
   async function loadPublicKeyFromApi(): Promise<string> {
     try {
       if (encryptionKey === undefined || encryptionKey === "") {
-        let response = await axios.get(
+        const response = await axios.get(
           Constants.BASE_API_URL + "/encryptionKey"
         );
         encryptionKey = response.data.encryptionKey;
@@ -24,8 +24,8 @@ async function Encryption(passwd: string) {
 
   async function encryptPassword(): Promise<string> {
     try {
-      let publicKey: string = await loadPublicKeyFromApi();
-      let encrypt = new JSEncrypt();
+      const publicKey: string = await loadPublicKeyFromApi();
+      const encrypt = new JSEncrypt();
       encrypt.setPublicKey(publicKey);
       return encrypt.encrypt(passwd).toString();
     } catch (error) {
