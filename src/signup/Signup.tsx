@@ -41,7 +41,7 @@ export function Signup() {
         email: email,
       })
       .then(
-        (response) => {
+        () => {
           navigate("/login");
         },
         (err) => {

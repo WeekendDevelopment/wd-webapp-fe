@@ -15,4 +15,8 @@ export class LoginRequest {
     this.password = password;
     return this;
   }
+
+  public getPassword(): String {
+    return this.password;
+  }
 }

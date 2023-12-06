@@ -7,6 +7,7 @@ import { Login } from './login/Login'
 import { Profile } from './profile/Profile'
 import PrivateRoute from './security/PrivateRoute'
 import { Signup } from './signup/Signup'
+import React from 'react';
 
 function App() {
   return (

@@ -4,6 +4,7 @@ import isJwtExpired from "../security/JwtUtil";
 import { ErrorHandler } from "../error/ErrorHandler";
 import "./Home.css";
 import { NavBar } from "../navbar/NavBar";
+import React from "react";
 
 export function Home() {
   /*
