@@ -1,13 +1,12 @@
-import React from "react";
+import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login } from "./login/Login";
-import { Signup } from "./signup/Signup";
-import { Home } from "./home/Home";
-import { Profile } from "./profile/Profile";
-import PrivateRoute from "./security/PrivateRoute";
-import { ErrorComponent } from "./error/ErrorComponent";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ErrorComponent } from './error/ErrorComponent'
+import { Home } from './home/Home'
+import { Login } from './login/Login'
+import { Profile } from './profile/Profile'
+import PrivateRoute from './security/PrivateRoute'
+import { Signup } from './signup/Signup'
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

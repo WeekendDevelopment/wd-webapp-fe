@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdLocalPhone, MdVideocam, MdMenu } from "react-icons/md";
 import isJwtExpired from "../security/JwtUtil";

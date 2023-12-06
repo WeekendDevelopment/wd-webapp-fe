@@ -13,6 +13,9 @@ export function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // clear session storage
+  sessionStorage.clear();
+
   const navigate = useNavigate();
 
   const handleChange = (event: any) => {
@@ -31,7 +34,7 @@ export function Login() {
   };
 
   async function login() {
-    let loginRequest: LoginRequest = new LoginRequest()
+    const loginRequest: LoginRequest = new LoginRequest()
       .setEmail(email)
       .setPassword(await Encryption(password));
     axios
@@ -44,7 +47,7 @@ export function Login() {
           );
           window.sessionStorage.setItem("user-email", email);
           navigate("/home", {
-            state: response,
+            state: response.data,
           });
         },
         (err) => {
@@ -54,13 +57,14 @@ export function Login() {
         }
       )
       .catch((err) => {
+        console.log(err);
         navigate("/error", {
           state: "Failed to Connect",
         });
       });
   }
   return (
-    <div className="App" style={{ height: "330px" }}>
+    <div className="App">
       {loading ? (
         <Loader />
       ) : (
