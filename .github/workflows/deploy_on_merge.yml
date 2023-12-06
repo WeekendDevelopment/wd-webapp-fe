@@ -2,7 +2,7 @@
 name: CI/CD Pipeline
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   #Build job
   node_pipeline:
@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
       #Node Dependency Installation
       - name: Installing Dependencies
         run: npm install
@@ -33,14 +33,14 @@ jobs:
         run: npm run build
       #GCP Authentication
       - name: Authenticate to Google Cloud
-        uses: 'google-github-actions/auth@v1'
+        uses: "google-github-actions/auth@v1"
         with:
           create_credentials_file: true
-          workload_identity_provider: 'projects/${{ secrets.GCP_WORKLOAD_IDENTITY_POOL_PROJECT_ID }}/locations/global/workloadIdentityPools/${{ secrets.GCP_WORKLOAD_IDENTITY_POOL_ID }}/providers/${{ secrets.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID }}'
-          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
-          project_id: '${{ secrets.GCP_PROJECT }}'
+          workload_identity_provider: "projects/${{ secrets.GCP_WORKLOAD_IDENTITY_POOL_PROJECT_ID }}/locations/global/workloadIdentityPools/${{ secrets.GCP_WORKLOAD_IDENTITY_POOL_ID }}/providers/${{ secrets.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID }}"
+          service_account: "${{ secrets.GCP_SERVICE_ACCOUNT }}"
+          project_id: "${{ secrets.GCP_PROJECT }}"
       #GCP Deployment
       - name: Deploy to Google Cloud
-        uses: 'google-github-actions/deploy-appengine@v1'
+        uses: "google-github-actions/deploy-appengine@v1"
         with:
-          project_id: '${{ secrets.GCP_PROJECT }}'
+          project_id: "${{ secrets.GCP_PROJECT }}"
