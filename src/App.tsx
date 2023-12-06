@@ -11,7 +11,7 @@ import React from 'react';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"/wd-webapp-fe/"}>
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/login" element={<Login />}></Route>
